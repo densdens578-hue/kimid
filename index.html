@@ -1,511 +1,66 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OBSIDIAN — детейлинг-центр</title>
-    <style>
-        :root {
-            --bg-main: #0a0a0a;
-            --bg-card: #141414;
-            --accent: #ffffff;
-            --accent-muted: #888888;
-            --border: #222222;
-            --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-        }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+OBSIDIAN
+Работы Услуги Процесс Контакты
++7 999 000-00-00 Записаться
 
-        body {
-            background-color: var(--bg-main);
-            color: #ffffff;
-            font-family: var(--font-family);
-            line-height: 1.5;
-            -webkit-font-smoothing: antialiased;
-        }
 
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
+детейлинг-центр OBSIDIAN
+Наведи на свет фар
+ПолировкаОклейкаКерамикаХимчистка
+Москва+7 999 000-00-00Ежедневно 10–22
+Кузов глубже, чем с завода
+Полировка, оклейка в полиуретан, керамика и химчистка. Принимаем по записи — работа от одного дня.
+Записаться на осмотр Смотреть работы Ответим за 15 минут
 
-        /* Header */
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.5rem 4rem;
-            border-bottom: 1px solid var(--border);
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(10, 10, 10, 0.8);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-        }
+01
+Мы не моем машины. Мы возвращаем им состояние, в котором их хочется рассматривать. Каждая панель — под контрольным светом, каждая плёнка — без пузырей и загибов, каждая керамика — с гарантией по договору.
+7 летгарантии на полиуретановую плёнку
+1 деньоклейка «под ключ» без простоя
+100%оригинальные материалы и химия
+02
+Работы
+Снято в нашем боксе, без фильтров. Так выглядит результат, за который клиенты возвращаются.
+Полировка кузова / восстановление глубины
+Оклейка полиуретаном / антигравийная защита
+Двухфазная мойка / подготовка к работам
+Керамика / капельное нанесение
+Химчистка салона / кожа и алькантара
+Диски и суппорты / защитное покрытие
+03
+Рамка — наша. Машина из неё вырвалась сама
+Мы не работаем «по регламенту». Если для идеального стыка плёнки нужно снять бампер — мы его снимаем. Если под ЛКП обнаруживается след ремонта — показываем до начала работ, а не после оплаты.
+Показать мне результат Осмотр и расчёт — бесплатно
 
-        .logo {
-            font-size: 1.2rem;
-            font-weight: 800;
-            letter-spacing: 3px;
-        }
 
-        nav a {
-            margin: 0 1.5rem;
-            color: var(--accent-muted);
-            font-size: 0.9rem;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: #fff;
-        }
-
-        .header-contacts {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-        }
-
-        .btn-sm {
-            border: 1px solid #333;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-            font-size: 0.85rem;
-            transition: all 0.3s;
-        }
-
-        .btn-sm:hover {
-            border-color: #fff;
-        }
-
-        /* Hero */
-        .hero {
-            padding: 12rem 4rem 6rem;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .hero-tag {
-            color: var(--accent-muted);
-            text-transform: uppercase;
-            font-size: 0.85rem;
-            letter-spacing: 2px;
-            margin-bottom: 1rem;
-        }
-
-        .hero-title {
-            font-size: 4rem;
-            font-weight: 400;
-            line-height: 1.1;
-            margin-bottom: 2rem;
-            max-width: 800px;
-        }
-
-        .hero-sub {
-            color: var(--accent-muted);
-            font-size: 1.2rem;
-            max-width: 550px;
-            margin-bottom: 3rem;
-        }
-
-        .hero-actions {
-            display: flex;
-            gap: 1.5rem;
-            align-items: center;
-            margin-bottom: 2rem;
-        }
-
-        .btn-primary {
-            background: #fff;
-            color: #000;
-            padding: 1rem 2rem;
-            font-weight: 600;
-            border-radius: 4px;
-            transition: opacity 0.3s;
-        }
-
-        .btn-primary:hover {
-            opacity: 0.9;
-        }
-
-        .btn-secondary {
-            border: 1px solid var(--border);
-            padding: 1rem 2rem;
-            border-radius: 4px;
-        }
-
-        .hero-meta {
-            font-size: 0.85rem;
-            color: var(--accent-muted);
-        }
-
-        /* Sections General */
-        section {
-            padding: 6rem 4rem;
-            max-width: 1400px;
-            margin: 0 auto;
-            border-top: 1px solid var(--border);
-        }
-
-        .section-num {
-            font-size: 0.9rem;
-            color: var(--accent-muted);
-            margin-bottom: 2rem;
-        }
-
-        /* Stats Section */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .stat-item h3 {
-            font-size: 2.5rem;
-            font-weight: 400;
-        }
-
-        .stat-item p {
-            color: var(--accent-muted);
-            font-size: 0.9rem;
-        }
-
-        /* Works Grid */
-        .works-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .work-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            padding: 2rem;
-            border-radius: 6px;
-        }
-
-        /* Services List */
-        .services-list {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .service-item {
-            display: grid;
-            grid-template-columns: 80px 1fr 200px;
-            padding: 2.5rem 0;
-            border-bottom: 1px solid var(--border);
-            align-items: center;
-        }
-
-        .service-num {
-            color: var(--accent-muted);
-        }
-
-        .service-price {
-            text-align: right;
-            font-size: 1.2rem;
-            font-weight: 500;
-        }
-
-        /* Process Steps */
-        .process-steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .step-card {
-            border-top: 1px solid var(--border);
-            padding-top: 1.5rem;
-        }
-
-        .step-num {
-            color: var(--accent-muted);
-            margin-bottom: 1rem;
-        }
-
-        /* Contact Form */
-        .contact-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-        }
-
-        form {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        input, select {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            padding: 1rem;
-            color: #fff;
-            border-radius: 4px;
-            font-family: inherit;
-        }
-
-        select option {
-            background: #000;
-        }
-
-        /* Footer */
-        footer {
-            border-top: 1px solid var(--border);
-            padding: 4rem;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            font-size: 0.9rem;
-            color: var(--accent-muted);
-        }
-
-        footer h4 {
-            color: #fff;
-            margin-bottom: 1rem;
-        }
-
-        @media (max-width: 768px) {
-            header, section, footer { padding: 1.5rem; }
-            .hero { padding: 8rem 1.5rem 4rem; }
-            .hero-title { font-size: 2.5rem; }
-            .service-item { grid-template-columns: 1fr; gap: 1rem; }
-            .service-price { text-align: left; }
-            .contact-container { grid-template-columns: 1fr; }
-        }
-    </style>
-</head>
-<body>
-
-    <header>
-        <div class="logo">OBSIDIAN</div>
-        <nav>
-            <a href="#works">Работы</a>
-            <a href="#services">Услуги</a>
-            <a href="#process">Процесс</a>
-            <a href="#contacts">Контакты</a>
-        </nav>
-        <div class="header-contacts">
-            <span>+7 999 000-00-00</span>
-            <a href="#contacts" class="btn-sm">Записаться</a>
-        </div>
-    </header>
-
-    <main>
-        <section class="hero" style="border-top: none;">
-            <div class="hero-tag">детейлинг-центр OBSIDIAN</div>
-            <h1 class="hero-title">Кузов глубже,<br>чем с завода</h1>
-            <p class="hero-sub">Полировка, оклейка в полиуретан, керамика и химчистка. Принимаем по записи — работа от одного дня.</p>
-            
-            <div class="hero-actions">
-                <a href="#contacts" class="btn-primary">Записаться на осмотр</a>
-                <a href="#works" class="btn-secondary">Смотреть работы</a>
-            </div>
-            <p class="hero-meta">Ответим за 15 минут | Москва • Ежедневно 10–22</p>
-        </section>
-
-        <section id="about">
-            <div class="section-num">01</div>
-            <h2>Мы не моем машины. Мы возвращаем им состояние, в котором их хочется рассматривать.</h2>
-            <p style="color: var(--accent-muted); margin-top: 1rem; max-width: 700px;">
-                Каждая панель — под контрольным светом, каждая плёнка — без пузырей и загибов, каждая керамика — с гарантией по договору.
-            </p>
-            
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <h3>7 лет</h3>
-                    <p>гарантии на полиуретановую плёнку</p>
-                </div>
-                <div class="stat-item">
-                    <h3>1 день</h3>
-                    <p>оклейка «под ключ» без простоя</p>
-                </div>
-                <div class="stat-item">
-                    <h3>100%</h3>
-                    <p>оригинальные материалы и химия</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="works">
-            <div class="section-num">02</div>
-            <h2>Работы</h2>
-            <p style="color: var(--accent-muted);">Снято в нашем боксе, без фильтров. Так выглядит результат, за который клиенты возвращаются.</p>
-            
-            <div class="works-grid">
-                <div class="work-card">
-                    <h3>Полировка кузова</h3>
-                    <p style="color: var(--accent-muted);">восстановление глубины</p>
-                </div>
-                <div class="work-card">
-                    <h3>Оклейка полиуретаном</h3>
-                    <p style="color: var(--accent-muted);">антигравийная защита</p>
-                </div>
-                <div class="work-card">
-                    <h3>Двухфазная мойка</h3>
-                    <p style="color: var(--accent-muted);">подготовка к работам</p>
-                </div>
-                <div class="work-card">
-                    <h3>Керамика</h3>
-                    <p style="color: var(--accent-muted);">капельное нанесение</p>
-                </div>
-                <div class="work-card">
-                    <h3>Химчистка салона</h3>
-                    <p style="color: var(--accent-muted);">кожа и алькантара</p>
-                </div>
-                <div class="work-card">
-                    <h3>Диски и суппорты</h3>
-                    <p style="color: var(--accent-muted);">защитное покрытие</p>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <div class="section-num">03</div>
-            <h2>Рамка — наша. Машина из неё вырвалась сама</h2>
-            <p style="color: var(--accent-muted); margin: 1rem 0 2rem;">
-                Мы не работаем «по регламенту». Если для идеального стыка плёнки нужно снять бампер — мы его снимаем. Если под ЛКП обнаруживается след ремонта — показываем до начала работ, а не после оплаты.
-            </p>
-            <a href="#contacts" class="btn-secondary">Показать мне результат (Осмотр и расчёт — бесплатно)</a>
-        </section>
-
-        <section id="services">
-            <div class="section-num">04</div>
-            <h2>Услуги</h2>
-            <p style="color: var(--accent-muted); margin-bottom: 2rem;">Точная цена — после осмотра. Разброс зависит от класса автомобиля и состояния ЛКП.</p>
-            
-            <div class="services-list">
-                <div class="service-item">
-                    <div class="service-num">01</div>
-                    <div>
-                        <h3>Полировка кузова</h3>
-                        <p style="color: var(--accent-muted);">Убираем риски, голограммы и паутинку. От одношаговой до восстановительной.</p>
-                    </div>
-                    <div class="service-price">от 15 000 ₽</div>
-                </div>
-                <div class="service-item">
-                    <div class="service-num">02</div>
-                    <div>
-                        <h3>Оклейка полиуретаном</h3>
-                        <p style="color: var(--accent-muted);">Антигравийная защита зон риска или полного кузова. Гарантия 7 лет.</p>
-                    </div>
-                    <div class="service-price">от 90 000 ₽</div>
-                </div>
-                <div class="service-item">
-                    <div class="service-num">03</div>
-                    <div>
-                        <h3>Керамическое покрытие</h3>
-                        <p style="color: var(--accent-muted);">Гидрофоб, глубина цвета и защита от реагентов на срок до 5 лет.</p>
-                    </div>
-                    <div class="service-price">от 25 000 ₽</div>
-                </div>
-                <div class="service-item">
-                    <div class="service-num">04</div>
-                    <div>
-                        <h3>Химчистка салона</h3>
-                        <p style="color: var(--accent-muted);">Кожа, алькантара, потолок и ремни. Возвращаем заводской запах.</p>
-                    </div>
-                    <div class="service-price">от 12 000 ₽</div>
-                </div>
-                <div class="service-item">
-                    <div class="service-num">05</div>
-                    <div>
-                        <h3>Тонировка и бронь стёкол</h3>
-                        <p style="color: var(--accent-muted);">Атермальные и бронировочные плёнки. Без демонтажа обшивок.</p>
-                    </div>
-                    <div class="service-price">от 8 000 ₽</div>
-                </div>
-            </div>
-        </section>
-
-        <section id="process">
-            <div class="section-num">05</div>
-            <h2>Как проходит работа</h2>
-            
-            <div class="process-steps">
-                <div class="step-card">
-                    <div class="step-num">01 Заявка</div>
-                    <p>Оставляешь номер — перезваниваем, уточняем задачу, называем вилку цены.</p>
-                </div>
-                <div class="step-card">
-                    <div class="step-num">02 Осмотр</div>
-                    <p>Замеряем толщину ЛКП, фиксируем состояние при тебе, подписываем акт.</p>
-                </div>
-                <div class="step-card">
-                    <div class="step-num">03 Работа</div>
-                    <p>Мойка, обезжиривание, основной этап. Фотоотчёт в мессенджер каждый день.</p>
-                </div>
-                <div class="step-card">
-                    <div class="step-num">04 Контроль</div>
-                    <p>Проверка под контрольным светом: стыки, края, отсутствие дефектов.</p>
-                </div>
-                <div class="step-card">
-                    <div class="step-num">05 Выдача</div>
-                    <p>Принимаешь работу, получаешь рекомендации. Контрольный осмотр через 2 недели — бесплатно.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="contacts">
-            <div class="section-num">06</div>
-            <div class="contact-container">
-                <div>
-                    <h2>Записаться на осмотр</h2>
-                    <p style="color: var(--accent-muted); margin: 1rem 0;">Оставь номер — перезвоним, ответим на вопросы и забронируем дату. Или напиши в мессенджер, как удобнее.</p>
-                    <p style="margin-top: 2rem;"><strong>Telegram / WhatsApp / Instagram</strong></p>
-                </div>
-                
-                <form>
-                    <input type="text" placeholder="Имя" required>
-                    <input type="tel" placeholder="Телефон" required>
-                    <select required>
-                        <option value="" disabled selected>Услуга</option>
-                        <option>Полировка кузова</option>
-                        <option>Оклейка полиуретаном</option>
-                        <option>Керамическое покрытие</option>
-                        <option>Химчистка салона</option>
-                        <option>Тонировка и бронь стёкол</option>
-                        <option>Не знаю — нужна консультация</option>
-                    </select>
-                    <button type="submit" class="btn-primary">Получить расчёт</button>
-                    <p style="font-size: 0.8rem; color: var(--accent-muted);">Без предоплаты. Отказаться можно в любой момент.</p>
-                </form>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div>
-            <div class="logo" style="margin-bottom: 1rem;">OBSIDIAN</div>
-            <p>OBSIDIAN — детейлинг-центр<br>© 2026</p>
-        </div>
-        <div>
-            <h4>Адрес</h4>
-            <p>Москва, ул. Примерная, 1</p>
-            <p>Ежедневно 10:00–22:00</p>
-        </div>
-        <div>
-            <h4>Связь</h4>
-            <p>+7 999 000-00-00</p>
-            <p>Telegram / WhatsApp / Instagram</p>
-        </div>
-        <div>
-            <h4>Навигация</h4>
-            <p><a href="#works">Работы</a></p>
-            <p><a href="#services">Услуги</a></p>
-            <p><a href="#contacts">Записаться</a></p>
-        </div>
-    </footer>
-
-</body>
-</html>
+04
+Услуги
+Точная цена — после осмотра. Разброс зависит от класса автомобиля и состояния ЛКП.
+	•	01Полировка кузова Убираем риски, голограммы и паутинку. От одношаговой до восстановительной.  от 15 000 ₽
+	•	02Оклейка полиуретаном Антигравийная защита зон риска или полного кузова. Гарантия 7 лет.  от 90 000 ₽
+	•	03Керамическое покрытие Гидрофоб, глубина цвета и защита от реагентов на срок до 5 лет.  от 25 000 ₽
+	•	04Химчистка салона Кожа, алькантара, потолок и ремни. Возвращаем заводской запах.  от 12 000 ₽
+	•	05Тонировка и бронь стёкол Атермальные и бронировочные плёнки. Без демонтажа обшивок.  от 8 000 ₽
+05
+Как проходит работа
+	1	01Заявка Оставляешь номер — перезваниваем, уточняем задачу, называем вилку цены.
+	2	02Осмотр Замеряем толщину ЛКП, фиксируем состояние при тебе, подписываем акт.
+	3	03Работа Мойка, обезжиривание, основной этап. Фотоотчёт в мессенджер каждый день.
+	4	04Контроль Проверка под контрольным светом: стыки, края, отсутствие дефектов.
+	5	05Выдача Принимаешь работу, получаешь рекомендации. Контрольный осмотр через 2 недели — бесплатно.
+06
+Записаться на осмотр
+Оставь номер — перезвоним, ответим на вопросы и забронируем дату. Или напиши в мессенджер, как удобнее.
+Telegram WhatsApp Instagram
+Имя Телефон Услуга
+            Полировка кузоваОклейка полиуретаномКерамическое покрытиеХимчистка салонаТонировка и бронь стёколНе знаю — нужна консультация
+           Получить расчёт
+Без предоплаты. Отказаться можно в любой момент.
+OBSIDIAN
+Адрес
+Москва, ул. Примерная, 1 Ежедневно 10:00–22:00
+Связь
++7 999 000-00-00 Telegram / WhatsApp / Instagram
+Навигация
+Работы Услуги Записаться
+OBSIDIAN — детейлинг-центр© 2026
+Записаться на осмотр
